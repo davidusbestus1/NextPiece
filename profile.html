@@ -14,20 +14,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
 
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xszgimvxmh");
-</script>
-
 </head>
 
 
 <body>
 
+
 <div class="transition"></div>
+
 
 <nav class="navbar">
 
@@ -39,7 +33,6 @@
 <button class="logout" onclick="logout()">Logout</button>
 
 </nav>
-
 
 
 
@@ -58,18 +51,12 @@
 
 
 
-
-
-
 <div class="container">
-
 
 
 <h2 id="profileName">
 Your Profile 🎵
 </h2>
-
-
 
 
 
@@ -86,6 +73,7 @@ Your Profile 🎵
 Not set
 </span>
 </p>
+
 
 
 <select id="instrumentSelect">
@@ -125,9 +113,7 @@ Not enough data
 </p>
 
 
-
 </div>
-
 
 
 
@@ -161,7 +147,13 @@ Not set
 
 
 
-<input id="learningInput" type="text" placeholder="What are you learning?">
+
+<input 
+id="learningInput"
+type="text"
+placeholder="What are you learning?"
+>
+
 
 
 
@@ -176,12 +168,7 @@ Save Piece
 
 
 
-
-
 </div>
-
-
-
 
 
 
@@ -191,17 +178,17 @@ Save Piece
 <script>
 
 
+// LOAD USER
+
+let user = JSON.parse(localStorage.getItem("user"));
+
+
 
 // CHECK LOGIN
 
-
-const user = JSON.parse(localStorage.getItem("user"));
-
-
-
 if(!user){
 
-    window.location.href = "login.html";
+    window.location.href="login.html";
 
 }
 
@@ -218,6 +205,9 @@ else{
         document.getElementById("instrument").textContent =
         user.instrument;
 
+        document.getElementById("instrumentSelect").value =
+        user.instrument;
+
     }
 
 
@@ -226,14 +216,10 @@ else{
 
 
 
-
-
-
-
 // LOAD FAVORITES
 
 
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+let favorites = user.favorites || [];
 
 
 
@@ -243,10 +229,7 @@ favorites.length;
 
 
 
-
-
-
-// CALCULATE LEVEL
+// CALCULATE SKILL LEVEL
 
 
 if(favorites.length > 0){
@@ -255,10 +238,9 @@ if(favorites.length > 0){
     let totalDifficulty = 0;
 
 
-
     favorites.forEach(song => {
 
-        totalDifficulty += song[3];
+        totalDifficulty += Number(song[3]);
 
     });
 
@@ -267,52 +249,50 @@ if(favorites.length > 0){
     let average = totalDifficulty / favorites.length;
 
 
-
-    let level;
+    let skill;
 
 
 
     if(average < 2){
 
-        level = "Beginner";
+        skill = "Beginner";
 
     }
 
     else if(average < 3){
 
-        level = "Easy Intermediate";
+        skill = "Easy Intermediate";
 
     }
 
     else if(average < 4){
 
-        level = "Intermediate";
+        skill = "Intermediate";
 
     }
 
     else if(average < 4.5){
 
-        level = "Advanced";
+        skill = "Advanced";
 
     }
 
     else{
 
-        level = "Expert";
+        skill = "Expert";
 
     }
 
 
 
-    document.getElementById("level").textContent = level;
+    document.getElementById("level").textContent =
+    skill;
 
 
 
 
 
-
-
-    // CALCULATE FAVORITE GENRE
+    // FIND FAVORITE GENRE
 
 
     let genres = {};
@@ -342,12 +322,11 @@ if(favorites.length > 0){
 
 
 
+    let favoriteGenre = Object.keys(genres).reduce((a,b)=>{
 
-    let favoriteGenre = Object.keys(genres).reduce((a,b) =>
+        return genres[a] > genres[b] ? a : b;
 
-        genres[a] > genres[b] ? a : b
-
-    );
+    });
 
 
 
@@ -363,9 +342,7 @@ if(favorites.length > 0){
 
 
 
-
-
-// LOAD CURRENTLY LEARNING
+// LOAD CURRENT PIECE
 
 
 let learning = localStorage.getItem("learning");
@@ -382,17 +359,22 @@ if(learning){
 
 
 
+
+
+
+// CHANGE INSTRUMENT
+
+
 function changeInstrument(){
 
 
-    let newInstrument = 
+    let newInstrument =
     document.getElementById("instrumentSelect").value;
 
 
-    let user = JSON.parse(localStorage.getItem("user"));
-
 
     user.instrument = newInstrument;
+
 
 
     localStorage.setItem(
@@ -401,22 +383,31 @@ function changeInstrument(){
     );
 
 
+
     document.getElementById("instrument").textContent =
     newInstrument;
 
 
+
     alert("Instrument changed to " + newInstrument + " 🎵");
+
 
 }
 
 
-// SAVE CURRENTLY LEARNING
+
+
+
+
+
+// SAVE CURRENT PIECE
 
 
 function saveLearning(){
 
 
-    let piece = document.getElementById("learningInput").value.trim();
+    let piece =
+    document.getElementById("learningInput").value.trim();
 
 
 
@@ -445,43 +436,81 @@ function saveLearning(){
     document.getElementById("learningInput").value = "";
 
 
+}
+
+
+
+
+
+
+
+// LOGOUT
+
+
+function logout(){
+
+    localStorage.removeItem("user");
+
+    window.location.href="login.html";
 
 }
-   const transition = document.querySelector(".transition");
 
 
-    document.querySelectorAll("a").forEach(link => {
-
-        if(link.href.includes(".html")){
-
-            link.addEventListener("click", function(e){
-
-                e.preventDefault();
-
-                let destination = this.href;
-
-                transition.classList.add("active");
 
 
-                setTimeout(() => {
-
-                    window.location.href = destination;
-
-                }, 500);
-
-            });
-
-        }
-
-    });
 
 
+
+// PAGE TRANSITION
+
+
+const transition =
+document.querySelector(".transition");
+
+
+
+document.querySelectorAll("a").forEach(link=>{
+
+
+    if(link.href.includes(".html")){
+
+
+        link.addEventListener("click",function(e){
+
+
+            e.preventDefault();
+
+
+            let destination=this.href;
+
+
+            transition.classList.add("active");
+
+
+
+            setTimeout(()=>{
+
+
+                window.location.href=destination;
+
+
+            },500);
+
+
+
+        });
+
+
+    }
+
+
+});
 
 
 
 </script>
 
-<script src="script.js"></script>
+
 
 </body>
 
