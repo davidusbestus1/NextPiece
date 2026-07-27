@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Favorites | NextPiece</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+<div class="transition"></div>
+
+<nav class="navbar">
+
+<a href="discover.html">Discover</a>
+<a href="recommendation.html">For You</a>
+<a href="favorites.html">Favorites</a>
+<a href="profile.html">Profile</a>
+
+<button class="logout" onclick="logout()">Logout</button>
+
+</nav>
+
+
+
+
+<header>
+
+<div class="logo">
+
+<img src="Logo1.png">
+
+<h1>NextPiece</h1>
+
+</div>
+
+</header>
+
+
+
+
+
+<div class="container">
+
+
+<h2>Your Favorite Songs ⭐</h2>
+
+
+<div id="favorites">
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+// Check if user is logged in
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+
+if(!user){
+
+    window.location.href="login.html";
+
+}
+
+
+
+// Logout function
+
+function logout(){
+
+    localStorage.removeItem("user");
+
+    window.location.href="login.html";
+
+}
+
+
+
+
+
+// Get this user's favorites only
+
+let favorites = user.favorites || [];
+
+
+
+let output = "";
+
+
+
+
+
+if(favorites.length === 0){
+
+
+    output = `
+
+    <p>
+    No favorite songs yet ⭐
+    </p>
+
+    `;
+
+
+}
+
+else{
+
+
+    favorites.forEach(song => {
+
+
+        output += `
+
+
+        <div class="song">
+
+
+            🎵 <b>${song[0]}</b>
+
+
+            <br><br>
+
+
+            ${song[1]}<br>
+
+            🎼 Genre: ${song[2]}<br>
+
+            ⭐ Difficulty: ${song[3]}/5<br>
+
+            🎭 Mood: ${song[4]}<br>
+
+            🎹 Instrument: ${song[5]}
+
+
+
+            <br><br>
+
+
+            <button onclick="removeFavorite('${song[0]}')">
+
+                ❌ Remove
+
+            </button>
+
+
+        </div>
+
+
+        `;
+
+
+    });
+
+
+}
+
+
+
+document.getElementById("favorites").innerHTML = output;
+
+
+
+
+
+
+
+function removeFavorite(songName){
+
+
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+
+
+    let favorites = user.favorites || [];
+
+
+
+    favorites = favorites.filter(song => song[0] !== songName);
+
+
+
+
+    user.favorites = favorites;
+
+
+
+    localStorage.setItem(
+
+        "user",
+
+        JSON.stringify(user)
+
+    );
+
+
+
+    location.reload();
+
+
+}
+
+
+   const transition = document.querySelector(".transition");
+
+
+    document.querySelectorAll("a").forEach(link => {
+
+        if(link.href.includes(".html")){
+
+            link.addEventListener("click", function(e){
+
+                e.preventDefault();
+
+                let destination = this.href;
+
+                transition.classList.add("active");
+
+
+                setTimeout(() => {
+
+                    window.location.href = destination;
+
+                }, 500);
+
+            });
+
+        }
+
+    });
+
+</script>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

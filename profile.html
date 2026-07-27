@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile | NextPiece</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="transition"></div>
+
+<nav class="navbar">
+
+<a href="discover.html">Discover</a>
+<a href="recommendation.html">For You</a>
+<a href="favorites.html">Favorites</a>
+<a href="profile.html">Profile</a>
+
+<button class="logout" onclick="logout()">Logout</button>
+
+</nav>
+
+
+
+
+<header>
+
+<div class="logo">
+
+<img src="Logo1.png">
+
+<h1>NextPiece</h1>
+
+</div>
+
+</header>
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+<h2 id="profileName">
+Your Profile 🎵
+</h2>
+
+
+
+
+
+
+<div class="song">
+
+
+<h3>About You</h3>
+
+
+<p>
+🎹 Instrument:
+<span id="instrument">
+Not set
+</span>
+</p>
+
+
+
+<p>
+⭐ Skill Level:
+<span id="level">
+Not enough data
+</span>
+</p>
+
+
+
+<p>
+🎼 Favorite Genre:
+<span id="genre">
+Not enough data
+</span>
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="song">
+
+
+<h3>Your Progress</h3>
+
+
+
+<p>
+⭐ Favorite Songs:
+<span id="favoriteCount">
+0
+</span>
+</p>
+
+
+
+
+<p>
+🎵 Currently Learning:
+<span id="learning">
+Not set
+</span>
+</p>
+
+
+
+<input id="learningInput" type="text" placeholder="What are you learning?">
+
+
+
+<button onclick="saveLearning()">
+Save Piece
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+// CHECK LOGIN
+
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+
+
+if(!user){
+
+    window.location.href = "login.html";
+
+}
+
+else{
+
+
+    document.getElementById("profileName").textContent =
+    user.name + "'s Profile 🎵";
+
+
+
+    if(user.instrument){
+
+        document.getElementById("instrument").textContent =
+        user.instrument;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+// LOAD FAVORITES
+
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+
+document.getElementById("favoriteCount").textContent =
+favorites.length;
+
+
+
+
+
+
+
+// CALCULATE LEVEL
+
+
+if(favorites.length > 0){
+
+
+    let totalDifficulty = 0;
+
+
+
+    favorites.forEach(song => {
+
+        totalDifficulty += song[3];
+
+    });
+
+
+
+    let average = totalDifficulty / favorites.length;
+
+
+
+    let level;
+
+
+
+    if(average < 2){
+
+        level = "Beginner";
+
+    }
+
+    else if(average < 3){
+
+        level = "Easy Intermediate";
+
+    }
+
+    else if(average < 4){
+
+        level = "Intermediate";
+
+    }
+
+    else if(average < 4.5){
+
+        level = "Advanced";
+
+    }
+
+    else{
+
+        level = "Expert";
+
+    }
+
+
+
+    document.getElementById("level").textContent = level;
+
+
+
+
+
+
+
+    // CALCULATE FAVORITE GENRE
+
+
+    let genres = {};
+
+
+
+    favorites.forEach(song => {
+
+
+        let genre = song[2];
+
+
+        if(genres[genre]){
+
+            genres[genre]++;
+
+        }
+
+        else{
+
+            genres[genre] = 1;
+
+        }
+
+
+    });
+
+
+
+
+    let favoriteGenre = Object.keys(genres).reduce((a,b) =>
+
+        genres[a] > genres[b] ? a : b
+
+    );
+
+
+
+    document.getElementById("genre").textContent =
+    favoriteGenre;
+
+
+
+}
+
+
+
+
+
+
+
+
+// LOAD CURRENTLY LEARNING
+
+
+let learning = localStorage.getItem("learning");
+
+
+
+if(learning){
+
+    document.getElementById("learning").textContent =
+    learning;
+
+}
+
+
+
+
+
+
+
+// SAVE CURRENTLY LEARNING
+
+
+function saveLearning(){
+
+
+    let piece = document.getElementById("learningInput").value.trim();
+
+
+
+    if(piece === ""){
+
+        alert("Enter a piece first!");
+
+        return;
+
+    }
+
+
+
+    localStorage.setItem(
+        "learning",
+        piece
+    );
+
+
+
+    document.getElementById("learning").textContent =
+    piece;
+
+
+
+    document.getElementById("learningInput").value = "";
+
+
+
+}
+   const transition = document.querySelector(".transition");
+
+
+    document.querySelectorAll("a").forEach(link => {
+
+        if(link.href.includes(".html")){
+
+            link.addEventListener("click", function(e){
+
+                e.preventDefault();
+
+                let destination = this.href;
+
+                transition.classList.add("active");
+
+
+                setTimeout(() => {
+
+                    window.location.href = destination;
+
+                }, 500);
+
+            });
+
+        }
+
+    });
+
+
+
+
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

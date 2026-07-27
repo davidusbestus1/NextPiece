@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Recommendations | NextPiece</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+<div class="transition"></div>
+
+<nav class="navbar">
+
+<a href="discover.html">Discover</a>
+<a href="recommendation.html">For You</a>
+<a href="favorites.html">Favorites</a>
+<a href="profile.html">Profile</a>
+
+<button class="logout" onclick="logout()">Logout</button>
+
+</nav>
+
+
+
+
+
+<header>
+
+<div class="logo">
+
+<img src="Logo1.png">
+
+<h1>NextPiece</h1>
+
+</div>
+
+</header>
+
+
+
+
+
+
+
+<div class="container">
+
+
+<h2 id="welcome"></h2>
+
+
+<h2>Your Personalized Recommendations 🎯</h2>
+
+
+<div class="result" id="recommended">
+
+<p>Your recommendations will appear here.</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script src="songs.js"></script>
+
+<script src="script.js"></script>
+
+
+
+
+<script>
+
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+
+
+if(!user){
+
+    window.location.href="login.html";
+
+}
+
+else{
+
+    document.getElementById("welcome").textContent =
+    "Welcome back, " + user.name + " 🎵";
+
+}
+
+
+
+
+
+
+function logout(){
+
+    localStorage.removeItem("user");
+
+    window.location.href="login.html";
+
+}
+
+
+
+
+
+
+showRecommendations();
+
+   const transition = document.querySelector(".transition");
+
+
+    document.querySelectorAll("a").forEach(link => {
+
+        if(link.href.includes(".html")){
+
+            link.addEventListener("click", function(e){
+
+                e.preventDefault();
+
+                let destination = this.href;
+
+                transition.classList.add("active");
+
+
+                setTimeout(() => {
+
+                    window.location.href = destination;
+
+                }, 500);
+
+            });
+
+        }
+
+    });
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>

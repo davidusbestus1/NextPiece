@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | NextPiece</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#f4f4f4;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .login-box{
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.1);
+            width:350px;
+            text-align:center;
+        }
+
+        img{
+            width:100px;
+            margin-bottom:15px;
+        }
+
+        h1{
+            font-family:'Cinzel', serif;
+            margin-bottom:5px;
+        }
+
+        p{
+            color:#666;
+            margin-bottom:30px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin-bottom:15px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:16px;
+            box-sizing:border-box;
+        }
+
+        button{
+            width:100%;
+            padding:14px;
+            background:black;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:17px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#333;
+        }
+
+        .signup{
+            margin-top:20px;
+            font-size:14px;
+        }
+
+        .signup a{
+            color:black;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        .signup a:hover{
+            text-decoration:underline;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <img src="Logo1.png" alt="NextPiece Logo">
+
+    <h1>Welcome Back</h1>
+
+    <p>Continue discovering your next favorite piece.</p>
+
+    <input id="name" type="text" placeholder="Username">
+
+    <input id="password" type="password" placeholder="Password">
+
+
+    <button onclick="login()">Log In</button>
+
+
+    <div class="signup">
+        Don't have an account?
+        <a href="signup.html">Sign Up</a>
+    </div>
+
+</div>
+
+
+<script src="auth.js"></script>
+
+</body>
+</html>

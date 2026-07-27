@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sign Up | NextPiece</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+
+<style>
+
+body{
+
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+
+}
+
+
+.signup-box{
+
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    width:380px;
+    text-align:center;
+
+}
+
+
+img{
+
+    width:100px;
+    margin-bottom:15px;
+
+}
+
+
+h1{
+
+    font-family:'Cinzel', serif;
+    margin-bottom:5px;
+
+}
+
+
+p{
+
+    color:#666;
+    margin-bottom:30px;
+
+}
+
+
+
+input, select{
+
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+
+}
+
+
+
+label{
+
+    display:block;
+    text-align:left;
+    font-weight:bold;
+    margin-bottom:5px;
+
+}
+
+
+
+button{
+
+    width:100%;
+    padding:14px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:17px;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    background:#333;
+
+}
+
+
+
+.login{
+
+    margin-top:20px;
+    font-size:14px;
+
+}
+
+
+.login a{
+
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+
+}
+
+
+.login a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<div class="signup-box">
+
+
+<img src="Logo1.png" alt="NextPiece Logo">
+
+
+<h1>Create Account</h1>
+
+
+<p>Start discovering your next favorite piece.</p>
+
+
+
+
+<input id="name" type="text" placeholder="Username">
+
+
+<label for="instrument">Instrument</label>
+
+<select id="instrument">
+
+    <option value="Piano">Piano</option>
+    <option value="Guitar">Guitar</option>
+    <option value="Violin">Violin</option>
+    <option value="Drums">Drums</option>
+    <option value="Singing">Singing</option>
+    <option value="Other">Other</option>
+
+</select>
+
+
+
+<input id="password" type="password" placeholder="Password">
+
+
+<input id="confirmPassword" type="password" placeholder="Confirm Password">
+
+
+
+
+<button onclick="signup()">
+Create Account
+</button>
+
+
+
+
+<div class="login">
+
+Already have an account?
+
+<a href="login.html">
+Log In
+</a>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script src="auth.js"></script>
+
+
+
+</body>
+
+</html>
