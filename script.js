@@ -123,16 +123,28 @@ function findSongs(){
 
                 🎹 Instrument: ${song[5]}<br><br>
 
+        
+                <a href="${song[6]}" target="_blank">
+
+                <button class="spotify-button">
+                    🎧 Listen on Spotify
+                </button>
+
+                </a>
+
+                <br><br>
 
 
-                <button onclick="addFavorite(${songIndex})">
 
-                ⭐ Add to Favorites
+
+                <button class="favorite-button" onclick="addFavorite(${songIndex})">
+
+                    ❤️ Add to Favorites
 
                 </button>
 
 
-            </div>
+                </div>
 
 
             `;
@@ -179,11 +191,13 @@ function addFavorite(index){
 
 
 
-    let exists = favorites.some(
+   let exists = favorites.some(
 
-        fav => fav[0] === song[0]
+    fav =>
+        fav[0] === song[0] &&
+        fav[5] === song[5]
 
-    );
+);
 
 
 
@@ -208,7 +222,7 @@ function addFavorite(index){
 
 
 
-        alert(song[0] + " added to favorites ⭐");
+        alert(song[0] + " added to favorites ❤️");
 
 
     }
@@ -373,7 +387,7 @@ function showRecommendations(){
         output = `
 
         <p>
-        Add some favorite songs first so we can learn your taste ⭐
+        Add some favorite songs first so we can learn your taste ❤️
         </p>
 
         `;
@@ -417,16 +431,25 @@ function showRecommendations(){
 
                 🎹 Instrument: ${song[5]}<br>
 
+                <a href="${song[6]}" target="_blank">
 
-                <button onclick="addFavorite(${songs.indexOf(song)})">
+                    🎧 Listen on Spotify
 
-                    ⭐ Add to Favorites
+                </a>
+
+                <br><br>
+
+
+
+                <button class="favorite-button" onclick="addFavorite(${songs.indexOf(song)})">
+
+                    ❤️ Add to Favorites
 
                 </button>
 
 
 
-            </div>
+                </div>
 
 
 

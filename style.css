@@ -301,3 +301,68 @@ body {
     box-sizing:border-box;
 
 }
+
+.spotify-button {
+
+    background-color: #1DB954;
+    color: white;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 10px 20px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.spotify-button:hover {
+
+    transform: scale(1.05);
+
+    opacity: 0.9;
+
+}
+
+.favorite-button {
+
+    background-color: #ff5c8a;
+    color: white;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 10px 20px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.favorite-button:hover {
+
+    transform: scale(1.05);
+
+    opacity: 0.9;
+
+}
+
+
+.favorite-button:hover {
+
+    transform: scale(1.05);
+
+    opacity: 0.9;
+
+}

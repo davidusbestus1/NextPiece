@@ -16,9 +16,14 @@
 
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        c[a]=c[a]||function(c){
+            (c[a].q=c[a].q||[]).push(arguments)
+        };
+        t=l.createElement(r);
+        t.async=1;
+        t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xszgimvxmh");
 </script>
 
@@ -29,12 +34,17 @@
 
 <div class="transition"></div>
 
+
 <nav class="navbar">
 
 <a href="discover.html">Discover</a>
 <a href="recommendation.html">For You</a>
 <a href="favorites.html">Favorites</a>
 <a href="profile.html">Profile</a>
+
+<a href="#" onclick="shareApp(); return false;">
+ Share!
+</a>
 
 <button class="logout" onclick="logout()">Logout</button>
 
@@ -67,11 +77,13 @@
 
 <h2>Find Your Next Piece 🎵</h2>
 
+
 <input 
 id="search"
 type="text"
 placeholder="🔍 Search songs or artists..."
 oninput="findSongs()">
+
 
 
 <label>Level</label>
@@ -89,7 +101,6 @@ oninput="findSongs()">
 
 
 
-
 <label>Genre</label>
 
 <select id="genre">
@@ -100,7 +111,6 @@ oninput="findSongs()">
 <option>Rock</option>
 
 </select>
-
 
 
 
@@ -145,8 +155,12 @@ Find My Songs
 
 
 
+<!-- UPDATED HERE -->
+<script src="songs-with-spotify.js"></script>
 
-<script src="songs.js"></script>
+<script>
+const songs = window.songs;
+</script>
 
 <script src="script.js"></script>
 
@@ -184,37 +198,65 @@ function logout(){
 
 }
 
-   const transition = document.querySelector(".transition");
 
 
-    document.querySelectorAll("a").forEach(link => {
-
-        if(link.href.includes(".html")){
-
-            link.addEventListener("click", function(e){
-
-                e.preventDefault();
-
-                let destination = this.href;
-
-                transition.classList.add("active");
+const transition = document.querySelector(".transition");
 
 
-                setTimeout(() => {
+document.querySelectorAll("a").forEach(link => {
 
-                    window.location.href = destination;
+    if(link.href.includes(".html")){
 
-                }, 500);
+        link.addEventListener("click", function(e){
 
-            });
+            e.preventDefault();
 
-        }
+            let destination = this.href;
 
-    });
+            transition.classList.add("active");
+
+
+            setTimeout(() => {
+
+                window.location.href = destination;
+
+            }, 500);
+
+        });
+
+    }
+
+});
+
+
+
+function shareApp(){
+
+    const shareData = {
+        title: "NextPiece 🎵",
+        text: "Find your next piece with NextPiece!",
+        url: window.location.href
+    };
+
+
+    if(navigator.share){
+
+        navigator.share(shareData);
+
+    }
+
+    else{
+
+        navigator.clipboard.writeText(window.location.href);
+
+        alert("Link copied! Send it to your friends 🎵");
+
+    }
+
+}
+
 
 </script>
-
-
 
 
 

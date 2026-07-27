@@ -30,7 +30,10 @@
 <a href="favorites.html">Favorites</a>
 <a href="profile.html">Profile</a>
 
-<button class="logout" onclick="logout()">Logout</button>
+<a href="#" onclick="shareApp(); return false;">
+ Share!
+</a>
+
 
 </nav>
 
@@ -505,6 +508,31 @@ document.querySelectorAll("a").forEach(link=>{
 
 
 });
+
+function shareApp(){
+
+    const shareData = {
+        title: "NextPiece 🎵",
+        text: "Find your next piece with NextPiece!",
+        url: window.location.href
+    };
+
+
+    if(navigator.share){
+
+        navigator.share(shareData);
+
+    }
+
+    else{
+
+        navigator.clipboard.writeText(window.location.href);
+
+        alert("Link copied! Send it to your friends 🎵");
+
+    }
+
+}
 
 
 
