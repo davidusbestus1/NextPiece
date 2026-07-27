@@ -356,8 +356,7 @@ function getRecommendations(){
 
 
 function showRecommendations(){
-     
-    alert("GitHub is using the new script");
+    
 
     let recommendations = getRecommendations();
 
