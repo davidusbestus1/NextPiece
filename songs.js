@@ -70,6 +70,33 @@ const songs = [
 ["Counting Stars","OneRepublic","Pop",1,"Energetic","Drums"],
 ["Uptown Funk","Mark Ronson","Pop",1,"Energetic","Drums"],
 
+["Dancing Queen","ABBA","Pop",2,"Energetic","Piano"],
+["Mamma Mia","ABBA","Pop",1,"Energetic","Piano"],
+["The Winner Takes It All","ABBA","Pop",3,"Emotional","Piano"],
+["Chiquitita","ABBA","Pop",2,"Emotional","Piano"],
+["I Have a Dream","ABBA","Pop",1,"Relaxing","Piano"],
+
+["Dancing Queen","ABBA","Pop",2,"Energetic","Guitar"],
+["Mamma Mia","ABBA","Pop",1,"Energetic","Guitar"],
+["Gimme! Gimme! Gimme!","ABBA","Pop",2,"Energetic","Guitar"],
+["Take A Chance On Me","ABBA","Pop",2,"Energetic","Guitar"],
+["Super Trouper","ABBA","Pop",2,"Energetic","Guitar"],
+
+["Bohemian Rhapsody","Queen","Rock",4,"Emotional","Piano"],
+["Love Of My Life","Queen","Rock",2,"Emotional","Piano"],
+["We Are The Champions","Queen","Rock",2,"Emotional","Piano"],
+["Don't Stop Me Now","Queen","Rock",3,"Energetic","Piano"],
+
+["We Will Rock You","Queen","Rock",1,"Energetic","Guitar"],
+["Another One Bites The Dust","Queen","Rock",2,"Energetic","Guitar"],
+["Crazy Little Thing Called Love","Queen","Rock",2,"Energetic","Guitar"],
+["I Want To Break Free","Queen","Rock",2,"Energetic","Guitar"],
+
+["Bohemian Rhapsody","Queen","Rock",5,"Emotional","Singing"],
+["Somebody To Love","Queen","Rock",4,"Emotional","Singing"],
+["We Are The Champions","Queen","Rock",2,"Emotional","Singing"],
+["Don't Stop Me Now","Queen","Rock",3,"Energetic","Singing"],
+
 ["Eye of the Tiger","Survivor","Rock",1,"Energetic","Drums"],
 ["Viva La Vida","Coldplay","Pop",1,"Emotional","Drums"],
 ["Believer","Imagine Dragons","Rock",1,"Energetic","Drums"],
@@ -638,5 +665,129 @@ const songs = [
 ["Use Somebody","Kings of Leon","Rock",3,"Emotional","Singing"],
 ["Wonderwall","Oasis","Rock",2,"Relaxing","Singing"],
 
+["Radio Ga Ga","Queen","Rock",2,"Energetic","Piano"],
+["Killer Queen","Queen","Rock",3,"Energetic","Piano"],
+["Under Pressure","Queen","Rock",3,"Energetic","Piano"],
+["Who Wants to Live Forever","Queen","Rock",3,"Emotional","Piano"],
+["Radio Ga Ga","Queen","Rock",2,"Energetic","Guitar"],
+["Killer Queen","Queen","Rock",3,"Energetic","Guitar"],
+["Under Pressure","Queen","Rock",3,"Energetic","Guitar"],
+["Who Wants to Live Forever","Queen","Rock",3,"Emotional","Guitar"],
+["Radio Ga Ga","Queen","Rock",2,"Energetic","Singing"],
+["Killer Queen","Queen","Rock",3,"Energetic","Singing"],
+
+["Fernando","ABBA","Pop",1,"Emotional","Piano"],
+["S.O.S.","ABBA","Pop",2,"Emotional","Piano"],
+["Money Money Money","ABBA","Pop",2,"Energetic","Piano"],
+["Waterloo","ABBA","Pop",1,"Energetic","Piano"],
+["Fernando","ABBA","Pop",1,"Emotional","Guitar"],
+["S.O.S.","ABBA","Pop",2,"Emotional","Guitar"],
+["Money Money Money","ABBA","Pop",2,"Energetic","Guitar"],
+["Waterloo","ABBA","Pop",1,"Energetic","Guitar"],
+["Fernando","ABBA","Pop",1,"Emotional","Violin"],
+["Waterloo","ABBA","Pop",2,"Energetic","Violin"],
+
+
+// VIOLIN EXPANSION
+
+["Für Elise","Ludwig van Beethoven","Classical",2,"Emotional","Violin"],
+["Spring Waltz","Frédéric Chopin","Classical",3,"Relaxing","Violin"],
+["Meditation from Thaïs","Jules Massenet","Classical",4,"Emotional","Violin"],
+["Salut d'Amour","Edward Elgar","Classical",3,"Emotional","Violin"],
+["Canon Rock","JerryC","Rock",4,"Energetic","Violin"],
+["Viva La Vida","Coldplay","Rock",2,"Emotional","Violin"],
+["Adventure of a Lifetime","Coldplay","Rock",3,"Energetic","Violin"],
+["A Sky Full of Stars","Coldplay","Pop",2,"Energetic","Violin"],
+["Believer","Imagine Dragons","Rock",3,"Energetic","Violin"],
+["Demons","Imagine Dragons","Rock",2,"Emotional","Violin"],
+["Someone Like You","Adele","Pop",3,"Emotional","Violin"],
+["Rolling in the Deep","Adele","Pop",3,"Energetic","Violin"],
+["Love Story","Taylor Swift","Pop",2,"Emotional","Violin"],
+["Safe and Sound","Taylor Swift","Pop",2,"Relaxing","Violin"],
+["Shallow","Lady Gaga","Pop",3,"Emotional","Violin"],
+
+
+// DRUMS EXPANSION
+
+["Billie Jean","Michael Jackson","Pop",3,"Energetic","Drums"],
+["Beat It","Michael Jackson","Rock",3,"Energetic","Drums"],
+["Eye of the Tiger","Survivor","Rock",2,"Energetic","Drums"],
+["Livin' on a Prayer","Bon Jovi","Rock",3,"Energetic","Drums"],
+["Don't Stop Believin'","Journey","Rock",3,"Energetic","Drums"],
+["Highway to Hell","AC/DC","Rock",3,"Energetic","Drums"],
+["Thunderstruck","AC/DC","Rock",4,"Energetic","Drums"],
+["Paradise City","Guns N' Roses","Rock",4,"Energetic","Drums"],
+["Sweet Child O' Mine","Guns N' Roses","Rock",4,"Energetic","Drums"],
+["Zombie","The Cranberries","Rock",2,"Emotional","Drums"],
+["I Love Rock 'n' Roll","Joan Jett","Rock",2,"Energetic","Drums"],
+["Should I Stay or Should I Go","The Clash","Rock",2,"Energetic","Drums"],
+["Basket Case","Green Day","Rock",3,"Energetic","Drums"],
+["Boulevard of Broken Dreams","Green Day","Rock",3,"Emotional","Drums"],
+["Holiday","Green Day","Rock",3,"Energetic","Drums"],
+
+
+// GUITAR EXPANSION
+
+["House of the Rising Sun","The Animals","Rock",2,"Emotional","Guitar"],
+["Wish You Were Here","Pink Floyd","Rock",3,"Relaxing","Guitar"],
+["Comfortably Numb","Pink Floyd","Rock",4,"Emotional","Guitar"],
+["Time","Pink Floyd","Rock",4,"Emotional","Guitar"],
+["Blackbird","The Beatles","Rock",3,"Relaxing","Guitar"],
+["Here Comes the Sun","The Beatles","Rock",2,"Relaxing","Guitar"],
+["Norwegian Wood","The Beatles","Rock",2,"Relaxing","Guitar"],
+["Brown Eyed Girl","Van Morrison","Rock",2,"Energetic","Guitar"],
+["Sweet Caroline","Neil Diamond","Pop",1,"Energetic","Guitar"],
+["Ring of Fire","Johnny Cash","Rock",2,"Energetic","Guitar"],
+["Jolene","Dolly Parton","Pop",2,"Energetic","Guitar"],
+["Fast Car","Tracy Chapman","Pop",2,"Relaxing","Guitar"],
+["Tears in Heaven","Eric Clapton","Rock",3,"Emotional","Guitar"],
+["Wonderful Tonight","Eric Clapton","Rock",2,"Relaxing","Guitar"],
+["Layla","Eric Clapton","Rock",4,"Energetic","Guitar"],
+
+
+// SINGING EXPANSION
+
+["Imagine","John Lennon","Pop",1,"Relaxing","Singing"],
+["Hey Jude","The Beatles","Rock",2,"Emotional","Singing"],
+["Let It Be","The Beatles","Rock",1,"Emotional","Singing"],
+["Yesterday","The Beatles","Rock",1,"Emotional","Singing"],
+["Here Comes the Sun","The Beatles","Rock",2,"Relaxing","Singing"],
+["Sweet Caroline","Neil Diamond","Pop",1,"Energetic","Singing"],
+["Stand By Me","Ben E. King","Pop",1,"Relaxing","Singing"],
+["Lean on Me","Bill Withers","Pop",1,"Relaxing","Singing"],
+["What a Wonderful World","Louis Armstrong","Pop",1,"Relaxing","Singing"],
+["Can't Help Falling in Love","Elvis Presley","Pop",2,"Emotional","Singing"],
+["Always on My Mind","Elvis Presley","Pop",2,"Emotional","Singing"],
+["My Way","Frank Sinatra","Pop",3,"Emotional","Singing"],
+["Fly Me to the Moon","Frank Sinatra","Pop",2,"Relaxing","Singing"],
+["New York New York","Frank Sinatra","Pop",2,"Energetic","Singing"],
+["A Million Dreams","The Greatest Showman","Film",2,"Emotional","Singing"]
+
+
+
+
+
 
 ];
+
+// REMOVE DUPLICATES AUTOMATICALLY
+const uniqueSongs = [];
+
+const songIDs = new Set();
+
+songs.forEach(song => {
+
+    const id = song[0] + "|" + song[1] + "|" + song[5];
+
+    if(!songIDs.has(id)){
+
+        songIDs.add(id);
+        uniqueSongs.push(song);
+
+    }
+
+});
+
+
+songs.length = 0;
+songs.push(...uniqueSongs);
