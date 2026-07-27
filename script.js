@@ -356,7 +356,8 @@ function getRecommendations(){
 
 
 function showRecommendations(){
-
+     
+    alert("GitHub is using the new script");
 
     let recommendations = getRecommendations();
 
@@ -418,11 +419,11 @@ function showRecommendations(){
                 🎹 Instrument: ${song[5]}<br>
 
 
-<button onclick="addFavorite(${songs.indexOf(song)})">
+                <button onclick="addFavorite(${songs.indexOf(song)})">
 
-⭐ Add to Favorites
+                    ⭐ Add to Favorites
 
-</button>
+                </button>
 
 
 
