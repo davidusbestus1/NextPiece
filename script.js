@@ -1,6 +1,5 @@
 
 
-
 function findSongs(){
 
 
@@ -9,6 +8,8 @@ function findSongs(){
     let genre = document.getElementById("genre").value;
 
     let mood = document.getElementById("mood").value;
+
+    const search = document.getElementById("search").value.toLowerCase();
 
 
     const user = JSON.parse(localStorage.getItem("user"));
@@ -28,13 +29,36 @@ function findSongs(){
         }
 
 
+
+        // Search mode
+        // Searches the whole library by song name or artist
+        if(search !== ""){
+
+
+            return (
+
+                (
+                    song[0].toLowerCase().includes(search) ||
+                    song[1].toLowerCase().includes(search)
+                )
+
+                && instrumentMatch
+
+            );
+
+
+        }
+
+
+
+        // Normal discovery mode with filters
         return (
 
             song[2] === genre &&
 
             song[4] === mood &&
 
-            song[3] === level &&
+            song[3] <= level &&
 
             instrumentMatch
 
@@ -58,7 +82,7 @@ function findSongs(){
         <h3>No matches yet 😢</h3>
 
         <p>
-        Try changing your filters or choosing a different instrument.
+        Try changing your filters or searching for another song.
         </p>
 
         `;
@@ -229,6 +253,11 @@ function getRecommendations(){
 
     songs.forEach(song => {
 
+  if(user.instrument && song[5] !== user.instrument){
+
+        return;
+
+    }
 
 
         let score = 0;
@@ -387,6 +416,14 @@ function showRecommendations(){
                 🎭 Mood: ${song[4]}<br>
 
                 🎹 Instrument: ${song[5]}<br>
+
+
+<button onclick="addFavorite(${songs.indexOf(song)})">
+
+⭐ Add to Favorites
+
+</button>
+
 
 
             </div>
