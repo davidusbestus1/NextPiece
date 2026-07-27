@@ -744,6 +744,31 @@ const songs = [
 ["Wonderful Tonight","Eric Clapton","Rock",2,"Relaxing","Guitar"],
 ["Layla","Eric Clapton","Rock",4,"Energetic","Guitar"],
 
+["Man in the Mirror","Michael Jackson","Pop",2,"Emotional","Piano"],
+["Heal the World","Michael Jackson","Pop",2,"Emotional","Piano"],
+["Earth Song","Michael Jackson","Pop",3,"Emotional","Piano"],
+["Smooth Criminal","Michael Jackson","Pop",3,"Energetic","Piano"],
+
+["Man in the Mirror","Michael Jackson","Pop",2,"Emotional","Singing"],
+["Heal the World","Michael Jackson","Pop",2,"Emotional","Singing"],
+["Thriller","Michael Jackson","Pop",3,"Energetic","Singing"],
+["Beat It","Michael Jackson","Rock",3,"Energetic","Singing"],
+
+["Black or White","Michael Jackson","Rock",2,"Energetic","Guitar"],
+["Beat It","Michael Jackson","Rock",3,"Energetic","Guitar"],
+["Smooth Criminal","Michael Jackson","Pop",3,"Energetic","Guitar"],
+["Man in the Mirror","Michael Jackson","Pop",2,"Emotional","Guitar"],
+
+["Smooth Criminal","Michael Jackson","Pop",3,"Energetic","Drums"],
+["Thriller","Michael Jackson","Pop",3,"Energetic","Drums"],
+["Black or White","Michael Jackson","Rock",3,"Energetic","Drums"],
+["Man in the Mirror","Michael Jackson","Pop",2,"Emotional","Drums"],
+
+["Smooth Criminal","Michael Jackson","Pop",4,"Energetic","Violin"],
+["Earth Song","Michael Jackson","Pop",3,"Emotional","Violin"],
+["Heal the World","Michael Jackson","Pop",2,"Emotional","Violin"],
+["Man in the Mirror","Michael Jackson","Pop",3,"Emotional","Violin"],
+
 
 // SINGING EXPANSION
 
