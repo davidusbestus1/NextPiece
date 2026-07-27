@@ -81,11 +81,30 @@ Your Profile 🎵
 
 
 <p>
-🎹 Instrument:
+🎵 Instrument:
 <span id="instrument">
 Not set
 </span>
 </p>
+
+
+<select id="instrumentSelect">
+
+<option value="Piano">🎹 Piano</option>
+<option value="Violin">🎻 Violin</option>
+<option value="Guitar">🎸 Guitar</option>
+<option value="Drums">🥁 Drums</option>
+<option value="Singing">🎤 Singing</option>
+
+</select>
+
+
+<br><br>
+
+
+<button onclick="changeInstrument()">
+Save Instrument
+</button>
 
 
 
@@ -363,7 +382,32 @@ if(learning){
 
 
 
+function changeInstrument(){
 
+
+    let newInstrument = 
+    document.getElementById("instrumentSelect").value;
+
+
+    let user = JSON.parse(localStorage.getItem("user"));
+
+
+    user.instrument = newInstrument;
+
+
+    localStorage.setItem(
+        "user",
+        JSON.stringify(user)
+    );
+
+
+    document.getElementById("instrument").textContent =
+    newInstrument;
+
+
+    alert("Instrument changed to " + newInstrument + " 🎵");
+
+}
 
 
 // SAVE CURRENTLY LEARNING
