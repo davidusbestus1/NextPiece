@@ -5806,3 +5806,4 @@ const songs = [
   ]
 ];
 window.songs = songs;
+window.todaysPicks = todaysPicks;
