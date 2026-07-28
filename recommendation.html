@@ -70,6 +70,15 @@
 
 <h2 id="welcome"></h2>
 
+<h2>⭐ Today's Pick</h2>
+
+<div class="result" id="todaysPick">
+
+<p>Loading today's pick...</p>
+
+</div>
+
+<hr>
 
 <h2>Your Personalized Recommendations 🎯</h2>
 
@@ -91,7 +100,7 @@
 
 
 
-<script src="songs.js"></script>
+<script src="songs-with-spotify.js"></script>
 
 <script src="script.js"></script>
 
@@ -137,6 +146,7 @@ function logout(){
 
 
 showRecommendations();
+showTodaysPick();
 
    const transition = document.querySelector(".transition");
 
