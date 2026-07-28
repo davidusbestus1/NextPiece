@@ -468,6 +468,65 @@ function showRecommendations(){
 
 }
 
+function showTodaysPick(){
+
+    const today = new Date();
+
+    const dayNumber = Math.floor(
+        today.getTime() / (1000 * 60 * 60 * 24)
+    );
+
+    const todaysTitle =
+        todaysPicks[dayNumber % todaysPicks.length];
+
+    const song = songs.find(s => s[0] === todaysTitle);
+
+    if(!song){
+        return;
+    }
+
+    document.getElementById("todaysPick").innerHTML = `
+
+        <div class="song">
+
+            <b>${song[0]}</b><br>
+
+            ${song[1]}<br><br>
+
+            🎼 Genre: ${song[2]}<br>
+
+            ⭐ Difficulty: ${song[3]}/5<br>
+
+            🎭 Mood: ${song[4]}<br>
+
+            🎹 Instrument: ${song[5]}<br><br>
+
+            <a href="${song[6]}" target="_blank">
+
+                <button class="spotify-button">
+
+                    🎧 Listen on Spotify
+
+                </button>
+
+            </a>
+
+            <br><br>
+
+            <button
+            class="favorite-button"
+            onclick="addFavorite(${songs.indexOf(song)})">
+
+                ❤️ Add to Favorites
+
+            </button>
+
+        </div>
+
+    `;
+
+}
+
 
 
 
