@@ -431,9 +431,13 @@ function showRecommendations(){
 
                 🎹 Instrument: ${song[5]}<br>
 
-                <a href="${song[6]}" target="_blank">
+               <a href="${song[6]}" target="_blank">
+
+                <button class="spotify-button">
 
                     🎧 Listen on Spotify
+
+                </button>
 
                 </a>
 
@@ -500,14 +504,13 @@ function showTodaysPick(){
             🎭 Mood: ${song[4]}<br>
 
             🎹 Instrument: ${song[5]}<br><br>
-
             <a href="${song[6]}" target="_blank">
 
-                <button class="spotify-button">
+            <button class="spotify-button">
 
-                    🎧 Listen on Spotify
+                🎧 Listen on Spotify
 
-                </button>
+            </button>
 
             </a>
 

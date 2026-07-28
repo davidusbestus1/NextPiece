@@ -5805,5 +5805,45 @@ const songs = [
     "https://open.spotify.com/track/4NdzFKsviXMxchKjzPhnKW"
   ]
 ];
+
+const todaysPicks = [
+
+    "Interstellar Theme",
+    "Married Life",
+    "He's a Pirate",
+    "Hedwig's Theme",
+    "The Avengers Theme",
+    "Time",
+    "Cornfield Chase",
+
+    "River Flows in You",
+    "Nuvole Bianche",
+    "Experience",
+    "Comptine d'un autre été",
+    "Una Mattina",
+    "Le Onde",
+
+    "Canon in D",
+    "Clair de Lune",
+    "Gymnopédie No.1",
+    "Nocturne Op.9 No.2",
+    "Für Elise",
+    "Moonlight Sonata",
+    "Turkish March",
+
+    "Bohemian Rhapsody",
+    "Viva La Vida",
+    "Someone Like You",
+    "All of Me",
+    "A Thousand Years",
+    "Let It Be",
+    "Imagine",
+
+    "Merry-Go-Round of Life",
+    "Path of the Wind",
+    "Concerning Hobbits",
+    "The Shire"
+
+];
 window.songs = songs;
 window.todaysPicks = todaysPicks;
